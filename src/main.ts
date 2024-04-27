@@ -1,4 +1,7 @@
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
+import { ConfigType } from '#/config/config.root.js';
+import { PrismaFilter } from '#/prisma/prisma.filter.js';
 import { AppModule } from './app.module.js';
 import { ZodFilter } from './zod/zod.filter.js';
 
@@ -7,8 +10,10 @@ async function bootstrap() {
     bodyParser: true,
     rawBody: true,
   });
+  const configService = app.get(ConfigService<ConfigType>);
   app.useGlobalFilters(new ZodFilter());
-  await app.listen(4000);
+  app.useGlobalFilters(new PrismaFilter());
+  await app.listen(configService.get('PORT') || 4000);
 }
 
 await bootstrap();

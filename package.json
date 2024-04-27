@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "scaffold-nest-prisma-api",
-  "main": "src/main.ts",
+  "main": "dist/main.js",
   "scripts": {
     "ncu": "npx npm-check-updates -u",
     "postinstall": "is-ci || is-docker || lefthook install",
@@ -14,7 +14,7 @@
     "predev:debug": "npm run postgres",
     "dev:debug": "nest start --watch --debug",
     "start": "node dist/main",
-    "lint": "biome lint . --apply",
+    "lint": "biome check . --apply",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:cov": "vitest run --coverage",

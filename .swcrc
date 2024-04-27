@@ -16,6 +16,9 @@
       "legacyDecorator": true,
       "decoratorMetadata": true
     },
+    "paths": {
+      "#/*": ["./src/*"]
+    },
     "keepClassNames": true
   },
   "minify": false,
