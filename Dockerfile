@@ -1,4 +1,4 @@
-FROM node:20.11.1 as builder
+FROM node:20.13.1 as builder
 
 USER root
 
@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:20.11.1
+FROM node:20.13.1
 
 ARG PORT=$PORT
 
