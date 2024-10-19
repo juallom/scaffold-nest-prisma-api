@@ -3,7 +3,7 @@
   "extends": [
     "config:recommended"
   ],
-  "timezone": "America/New_York",
+  "timezone": "Europe/Madrid",
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": "after 10pm on sunday"
